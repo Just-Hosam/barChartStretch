@@ -1,0 +1,28 @@
+.y-axis-line {
+  border-left: 3px solid black;
+  height: 300px;
+  position: absolute;
+  left: 10%;
+}
+
+.x-axis-line {
+  border-bottom: 3px solid black;
+  width: 400px;
+  position: absolute;
+  margin-left: 1.1cm;
+  margin-top: 7.9cm;
+}
+
+.first-value-name {
+  padding-left: 2cm;
+}
+
+.first-value-bar {
+  height: 100px;
+  width: 50px;
+  background-color: red;
+  margin-left: 2cm;
+  margin-top: 4.8cm;
+}
+
+
