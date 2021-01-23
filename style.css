@@ -57,8 +57,20 @@
   text-align: center;
 }
 
-.bars .bar:before {
+.top:before {
   content: attr(value);
   position: relative;
-  bottom: -15px;
+  bottom: -13px;
+}
+
+.mid:before {
+  content: attr(value);
+  position: relative;
+  bottom: -45%;
+}
+
+.bottom:after {
+  content: attr(value);
+  position: relative;
+  bottom: -85%;
 }
