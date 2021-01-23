@@ -1,13 +1,6 @@
-.chart {
-  width: 600px;
-  height: 300px;
-  display: block;
-}
-
 .y-axis-values {
   width: 50px;
   height: 100%;
-  display: inline-block;
   float: left;
   margin: 0;
   padding: 0;

@@ -29,6 +29,12 @@ const expenseDataObj = [
     numUnit: '$'
   },
 
+  {
+    name: 'June',
+    numData: 400,
+    numUnit: '$'
+  },
+
 ]
 
 const largestValue = dataObj => {
@@ -42,6 +48,16 @@ const largestValue = dataObj => {
 
 
 $(document).ready(() => {
+
+  $('#topTick').html(largestValue(expenseDataObj) + expenseDataObj[0].numUnit);
+  $('#midTick').html(largestValue(expenseDataObj)/2 + expenseDataObj[0].numUnit);
+  $('#bottomTick').html(0 + expenseDataObj[0].numUnit);
+
+  let xAxisWidth = expenseDataObj.length * 100 + 'px';
+  console.log(xAxisWidth);
+  $('.bars').css('width', xAxisWidth);
+
+
   for (let j = 0; j < expenseDataObj.length; j++) {
     let fromDataSet = expenseDataObj[j].numData;
     let dataPercent = Math.floor( 100 * fromDataSet / largestValue(expenseDataObj) );
@@ -59,10 +75,6 @@ $(document).ready(() => {
 
     $(value).css('height', heightPercent);
   });
-
-  $('#topTick').html(largestValue(expenseDataObj) + expenseDataObj[0].numUnit);
-  $('#midTick').html(largestValue(expenseDataObj)/2 + expenseDataObj[0].numUnit);
-  $('#bottomTick').html(0 + expenseDataObj[0].numUnit);
 
 
 });
