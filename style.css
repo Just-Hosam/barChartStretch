@@ -1,28 +1,70 @@
-.y-axis-line {
-  border-left: 3px solid black;
+.chart {
+  width: 600px;
   height: 300px;
-  position: absolute;
-  left: 10%;
+  display: block;
 }
 
-.x-axis-line {
-  border-bottom: 3px solid black;
-  width: 400px;
-  position: absolute;
-  margin-left: 1.1cm;
-  margin-top: 7.9cm;
-}
-
-.first-value-name {
-  padding-left: 2cm;
-}
-
-.first-value-bar {
-  height: 100px;
+.y-axis-values {
   width: 50px;
-  background-color: red;
-  margin-left: 2cm;
-  margin-top: 4.8cm;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  top: 100px;
 }
 
+.y-axis-values li {
+  list-style: none;
+  bottom: 145px;
+  position: relative;
+  height: 150px;
+}
 
+.y-axis-values span {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+.bars {
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-top: 12px;
+}
+
+.bars li {
+  display: table-cell;
+  position: relative;
+  width: 100px;
+  height: 300px;
+}
+
+.bars span {
+  position: absolute;
+  text-align: center;
+  bottom: -30px;
+  width: 100%;
+}
+
+.bars .bar {
+  display: block;
+  background-color: red;
+  width: 50px;
+  bottom: 0;
+  position: absolute;
+  margin-left: 25px;
+  text-align: center;
+}
+
+.bars .bar:before {
+  content: attr(data-percentage) '%';
+  position: relative;
+  bottom: 20px;
+}

@@ -21,23 +21,25 @@
       <div class='final-bar-chart'>
         <div class="y-axis-line"></div>
         <div class="x-axis-line"></div>
-        <div class="first-value-name">January</div>
-        <div class="first-value-bar"></div>
+        <div class="y-axis-values">
+          <ul>
+            <li><span>100%</span></li>
+            <li><span>50%</span></li>
+            <li><span>0%</span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bars">
+          </ul>
+        </div>
       </div>
     </div>
   </main>
-  <script>
-    $(document).ready(() => {
-      $('.intro-title').on('click', () => {
-        $('.intro-title').addClass('test');
-      })
-    });
-  </script>
-  <script src="./script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous">
+</script>
+<script src="./script.js"></script>
 </body>
-
-
-
-
 </html>
