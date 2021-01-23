@@ -60,6 +60,10 @@ $(document).ready(() => {
     $(value).css('height', heightPercent);
   });
 
+  $('#topTick').html(largestValue(expenseDataObj) + expenseDataObj[0].numUnit);
+  $('#midTick').html(largestValue(expenseDataObj)/2 + expenseDataObj[0].numUnit);
+  $('#bottomTick').html(0 + expenseDataObj[0].numUnit);
+
 
 });
 
