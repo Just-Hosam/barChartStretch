@@ -120,6 +120,7 @@ $(document).ready(() => {
     let tableRow = '<tr>';
     tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month"></td>';
     tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense"></td>';
+    tableRow += '<td><input type="button" value="Delete Row"></td>';
     tableRow += '</tr>';
     $('table tbody').append(tableRow);
   })
