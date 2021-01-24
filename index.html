@@ -17,7 +17,7 @@
       <p>This is the Lighthouse Labs Bar Chart Stretch project in the prep module. The goal is to create a Bar Chart that updates its format based on the data entered.</p>
     </div>
     <div class='chart'>
-      <h2>Bar Chart</h2>
+      <h2>Bar Chart: <span id='barTitle'>Rent as a function of time (months)</span></h2>
       <div class='final-bar-chart'>
         <div class="y-axis-values">
           <ul>
@@ -29,7 +29,6 @@
         <div class='x-axis-values'>
           <ul class="bars"></ul>
           <div>
-            <h3 id='barTitle'>Rent as a function of time (months)</h3>
           </div>
         </div>
       </div>
@@ -50,7 +49,9 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="3"><input type="button" value="Add row" id="addRowButton"></td>
+              <td style='text-align: center;'><input type="button" value="Add Row" id="addRowButton"></td>
+              <td style='text-align: center;'><input type="button" value="Submit" id="submitButton"></td>
+              <td style='text-align: center;'><input type="button" value="Reset" id="resetButton"></td>
             </tr>
           </tfoot>
         </table>

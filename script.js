@@ -30,7 +30,7 @@ options = {
   unit: '$',
   barColor: 'red',
   labelColor: 'black',
-  titleText: 'this is a bar chart title',
+  titleText: 'this is not right',
   titleColor: 'black',
   titleFontSize: 20,
   titleFontUnit: 'px',
@@ -116,14 +116,27 @@ const drawBarChart = (expenseDataObj, options) => {
 }
 
 $(document).ready(() => {
+
+  // clicking on button creates 2 input boxes and a delete button
   $('#addRowButton').on('click', () => {
     let tableRow = '<tr>';
     tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month"></td>';
     tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense"></td>';
-    tableRow += '<td><input type="button" value="Delete Row"></td>';
+    tableRow += '<td><input type="button" value="Delete Row" class="deleteButton"></td>';
     tableRow += '</tr>';
     $('table tbody').append(tableRow);
   })
+
+  // deletes table row on button click
+  $('table tbody').on('click',  '.deleteButton',(event) => {
+    $(event.currentTarget).closest('tr').remove();
+  })
+
+  // deletes ALL table rows on button click
+  $('#resetButton').on('click',() => {
+    $('tbody tr').remove();
+  })
+
 
 })
 
