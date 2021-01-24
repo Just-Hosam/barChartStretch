@@ -26,12 +26,7 @@ const testObj = [
 
 ]
 
-let resetObj = [
-  {
-    name: '',
-    numData: 0
-  }
-]
+
 
 options = {
   unit: '$',
@@ -132,7 +127,7 @@ $(document).ready(() => {
   $('#addRowButton').on('click', () => {
     let tableRow = '<tr>';
     tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month" value="january"></td>';
-    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense" value="238942"></td>';
+    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense" value="00"></td>';
     tableRow += '<td><input type="button" value="Delete Row" class="deleteButton"></td>';
     tableRow += '</tr>';
     $('table tbody').append(tableRow);
@@ -160,6 +155,7 @@ const getTableData = () => {
   $(document).ready(() => {
     $('#submitButton').on('click', () => {
       dataArr = [];
+      barChartReset();
       let counter = 0;
       $('table tbody tr').each((index, key) => {
         dataArr.push({})
@@ -174,6 +170,13 @@ const getTableData = () => {
   })
 }
 
+const barChartReset = () => {
+  $('#topTick').innerHTML = '';
+  $('#midTick').innerHTML = '';
+  $('#bottomTick').innerHTML = '';
+
+  $('.bars li').remove();
+}
 
 
 
