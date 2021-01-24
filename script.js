@@ -30,13 +30,14 @@ options = {
   unit: '$',
   barColor: 'red',
   labelColor: 'black',
-  titleText: 'This is a bar chart title',
+  titleText: 'this is a bar chart title',
   titleColor: 'black',
   titleFontSize: 20,
   titleFontUnit: 'px',
   yAxisHeightValue: 300,
   yAxisHeightUnit: 'px'
 }
+
 
 const largestValue = dataObj => {
   let storeArr = [];
@@ -113,6 +114,28 @@ const drawBarChart = (expenseDataObj, options) => {
   });
 
 }
+
+$(document).ready(() => {
+  $('#addRowButton').on('click', () => {
+    let tableRow = '<tr>';
+    tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month"></td>';
+    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense"></td>';
+    tableRow += '</tr>';
+    $('table tbody').append(tableRow);
+  })
+
+})
+
+
+
+
+
+
+
+
+
+
+
 
 drawBarChart(expenseDataObj, options);
 
