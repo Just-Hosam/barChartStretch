@@ -1,33 +1,3 @@
-const testObj = [
-  {
-    name: 'January',
-    numData: 600
-  },
-
-  {
-    name: 'February',
-    numData: 350
-  },
-
-  {
-    name: 'March',
-    numData: 400
-  },
-
-  {
-    name: 'April',
-    numData: 200
-  },
-
-  {
-    name: 'May',
-    numData: 500
-  }
-
-]
-
-
-
 options = {
   unit: '$',
   barColor: 'red',
@@ -164,16 +134,19 @@ const getTableData = () => {
         dataArr[index].numData = $('table tbody tr input')[counter].value;
         counter += 2;
       })
-      console.log(dataArr);
-      drawBarChart(dataArr, options);
+      if(dataArr.length > 0) {
+        drawBarChart(dataArr, options);
+      } else {
+        barChartReset();
+      }
     })
   })
 }
 
 const barChartReset = () => {
-  $('#topTick').innerHTML = '';
-  $('#midTick').innerHTML = '';
-  $('#bottomTick').innerHTML = '';
+  $('#topTick').empty();
+  $('#midTick').empty();
+  $('#bottomTick').empty();
 
   $('.bars li').remove();
 }
