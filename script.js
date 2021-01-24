@@ -32,7 +32,10 @@ options = {
   labelColor: 'black',
   titleText: 'This is a bar chart title',
   titleColor: 'black',
-  titleFontSize: '20px'
+  titleFontSize: 20,
+  titleFontUnit: 'px',
+  yAxisHeightValue: 600,
+  yAxisHeightUnit: 'px'
 }
 
 const largestValue = dataObj => {
@@ -94,7 +97,15 @@ $(document).ready(() => {
   $('.bars li').css('color', options.labelColor);
   $('#barTitle').html(options.titleText);
   $('#barTitle').css('color', options.titleColor);
-  $('#barTitle').css('font-size', options.titleFontSize);
+  $('#barTitle').css('font-size', options.titleFontSize + options.titleFontUnit);
+
+  // adjusts bar, y-axis & y-axis values to match given height
+  let yAxisHeight = options.yAxisHeightValue + options.yAxisHeightUnit;
+  $('.bars').css('height', yAxisHeight);
+  $('.bars li').css('height', yAxisHeight);
+  $('.y-axis-values').css('height', yAxisHeight);
+  let spaceBtnTicks = options.yAxisHeightValue/2 + options.yAxisHeightUnit;
+  $('.y-axis-values li').css('height', spaceBtnTicks);
 
 
 });
