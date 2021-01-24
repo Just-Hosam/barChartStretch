@@ -96,8 +96,8 @@ $(document).ready(() => {
   // clicking on button creates 2 input boxes and a delete button
   $('#addRowButton').on('click', () => {
     let tableRow = '<tr>';
-    tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month" value="january"></td>';
-    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense" value="00"></td>';
+    tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month"></td>';
+    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense"></td>';
     tableRow += '<td><input type="button" value="Delete Row" class="deleteButton"></td>';
     tableRow += '</tr>';
     $('table tbody').append(tableRow);
@@ -123,7 +123,7 @@ let dataArr = [];
 
 const getTableData = () => {
   $(document).ready(() => {
-    $('#submitButton').on('click', () => {
+    $('.submissionBtn').on('click', () => {
       dataArr = [];
       barChartReset();
       let counter = 0;

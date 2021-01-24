@@ -49,12 +49,12 @@
             <tr>
               <td style='text-align: center;'><input type="button" value="Add Row" id="addRowButton"></td>
               <td style='text-align: center;'><input type="button" value="Reset" id="resetButton"></td>
-              <td style='text-align: center;'><input type="button" value="Submit" id="submitButton"></td>
+              <td style='text-align: center;'><input type="button" value="Submit" id="submitButton" class="submissionBtn"></td>
             </tr>
           </tfoot>
         </table>
-        <div class='customization-input'>
-          <h2>Input Customization Data</h2>
+        <h2>Input Customization Data</h2>
+          <div class='customization-input'>
             <div class="label-unit-text">
               <label for="cust-unit">Label Unit: </label>
               <input type="text" value="$" name='cust-unit' id="cust-unit">
@@ -87,9 +87,14 @@
               <label for="cust-unit">Y-axis Height Unit: </label>
               <input type="text" value="px" name='cust-unit' id="cust-unit">
             </div>
+            <div>
+              <input type="button" value="Submit" class="submissionBtn">
+            </div>
+
+          <h2>Dynamic Title Updating</h2>
 
 
-        </div>
+          </div>
     </div>
   </main>
 <script
