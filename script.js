@@ -1,4 +1,4 @@
-const expenseDataObj = [
+const testObj = [
   {
     name: 'January',
     numData: 600
@@ -26,13 +26,20 @@ const expenseDataObj = [
 
 ]
 
+let resetObj = [
+  {
+    name: '',
+    numData: 0
+  }
+]
+
 options = {
   unit: '$',
   barColor: 'red',
   labelColor: 'black',
   titleText: 'this is not right',
   titleColor: 'black',
-  titleFontSize: 20,
+  titleFontSize: 25,
   titleFontUnit: 'px',
   yAxisHeightValue: 300,
   yAxisHeightUnit: 'px'
@@ -41,7 +48,7 @@ options = {
 
 const largestValue = dataObj => {
   let storeArr = [];
-  for(let i = 0; i < expenseDataObj.length; i++) {
+  for(let i = 0; i < dataObj.length; i++) {
     storeArr.push(dataObj[i].numData);
   }
 
@@ -115,13 +122,17 @@ const drawBarChart = (expenseDataObj, options) => {
 
 }
 
+
+// INPUT CODE
+
+
 $(document).ready(() => {
 
   // clicking on button creates 2 input boxes and a delete button
   $('#addRowButton').on('click', () => {
     let tableRow = '<tr>';
-    tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month"></td>';
-    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense"></td>';
+    tableRow += '<td><input type="text" name="xLabels" placeholder="Enter Month" value="january"></td>';
+    tableRow += '<td><input type="text" name="yValues" placeholder="Enter Expense" value="238942"></td>';
     tableRow += '<td><input type="button" value="Delete Row" class="deleteButton"></td>';
     tableRow += '</tr>';
     $('table tbody').append(tableRow);
@@ -138,18 +149,39 @@ $(document).ready(() => {
   })
 
 
+
 })
 
+// data collection
+
+let dataArr = [];
+
+const getTableData = () => {
+  $(document).ready(() => {
+    $('#submitButton').on('click', () => {
+      dataArr = [];
+      let counter = 0;
+      $('table tbody tr').each((index, key) => {
+        dataArr.push({})
+        dataArr[index].name = $('table tbody tr input')[counter].value;
+        counter++;
+        dataArr[index].numData = $('table tbody tr input')[counter].value;
+        counter += 2;
+      })
+      console.log(dataArr);
+      drawBarChart(dataArr, options);
+    })
+  })
+}
 
 
 
 
 
 
+getTableData();
 
 
 
 
-
-drawBarChart(expenseDataObj, options);
 

@@ -28,20 +28,18 @@
         </div>
         <div class='x-axis-values'>
           <ul class="bars"></ul>
-          <div>
-          </div>
         </div>
       </div>
     </div>
     <br>
     <div class='data-input'>
       <h2>Input Chart Data</h2>
-        <table border="1">
+        <table id='inputTable' border="1">
           <thead>
             <tr>
               <th>X-axis Labels</th>
               <th>Y-axis Values</th>
-              <th>Delete Row</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -50,8 +48,8 @@
           <tfoot>
             <tr>
               <td style='text-align: center;'><input type="button" value="Add Row" id="addRowButton"></td>
-              <td style='text-align: center;'><input type="button" value="Submit" id="submitButton"></td>
               <td style='text-align: center;'><input type="button" value="Reset" id="resetButton"></td>
+              <td style='text-align: center;'><input type="button" value="Submit" id="submitButton"></td>
             </tr>
           </tfoot>
         </table>
