@@ -1,35 +1,39 @@
 const expenseDataObj = [
   {
     name: 'January',
-    numData: 600,
-    numUnit: '$'
+    numData: 600
   },
 
   {
     name: 'February',
-    numData: 350,
-    numUnit: '$'
+    numData: 350
   },
 
   {
     name: 'March',
-    numData: 400,
-    numUnit: '$'
+    numData: 400
   },
 
   {
     name: 'April',
-    numData: 135,
-    numUnit: '$'
+    numData: 200
   },
 
   {
     name: 'May',
-    numData: 500,
-    numUnit: '$'
+    numData: 500
   }
 
 ]
+
+options = {
+  unit: '$',
+  barColor: 'red',
+  labelColor: 'black',
+  titleText: 'This is a bar chart title',
+  titleColor: 'black',
+  titleFontSize: '20px'
+}
 
 const largestValue = dataObj => {
   let storeArr = [];
@@ -44,9 +48,9 @@ const largestValue = dataObj => {
 $(document).ready(() => {
 
   // updates y-axis values to match given data
-  $('#topTick').html(largestValue(expenseDataObj) + expenseDataObj[0].numUnit);
-  $('#midTick').html(largestValue(expenseDataObj)/2 + expenseDataObj[0].numUnit);
-  $('#bottomTick').html(0 + expenseDataObj[0].numUnit);
+  $('#topTick').html(largestValue(expenseDataObj) + options.unit);
+  $('#midTick').html(largestValue(expenseDataObj)/2 + options.unit);
+  $('#bottomTick').html(0 + options.unit);
 
   // updates width of x-axis based on the number of given data values
   $('.bars').css('width', (expenseDataObj.length * 100 + 'px'));
@@ -58,7 +62,7 @@ $(document).ready(() => {
     let dataPercent = Math.floor( 100 * fromDataSet / largestValue(expenseDataObj) );
     let dataName = expenseDataObj[j].name;
 
-    let newStr = "<li><div class='bar top' data-percentage='" + dataPercent +  "' value='" + fromDataSet + expenseDataObj[j].numUnit +  "'></div><span>" + dataName + "</span></li>";
+    let newStr = "<li><div class='bar top' data-percentage='" + dataPercent +  "' value='" + fromDataSet + options.unit +  "'></div><span>" + dataName + "</span></li>";
 
     $('.bars').append(newStr);
   }
@@ -73,6 +77,7 @@ $(document).ready(() => {
   });
 
 
+  // moves the values on bars (top, mid, bottom)
   $('.bars .bar').on('click', (event) => {
     let testingElement = $(event.currentTarget).attr('class');
     if (testingElement.includes('top')) {
@@ -83,6 +88,13 @@ $(document).ready(() => {
       $(event.currentTarget).removeClass('bottom').addClass('top');
     }
   })
+
+  // updates the bar charts to what the user wants
+  $('.bars .bar').css('background-color', options.barColor);
+  $('.bars li').css('color', options.labelColor);
+  $('#barTitle').html(options.titleText);
+  $('#barTitle').css('color', options.titleColor);
+  $('#barTitle').css('font-size', options.titleFontSize);
 
 
 });
