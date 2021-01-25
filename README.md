@@ -1,5 +1,5 @@
 # barChartStretch
-Lighthouse Labs Stretch Project
+Lighthouse Labs Stretch Project. To see the website click [here](https://just-hosam.github.io/barChartStretch/).
 ## Getting Started
 This project is a website that takes input from the user and presents that data on a customizable Bar Chart. Clicking on the bars (after submiting data) will move the values between 3 positions (top, mid and bottom).
 
@@ -22,3 +22,4 @@ The title can be dynamically changed by adjsuting the values in the "Dynamic Tit
 * [StackOverflow](https://stackoverflow.com/)
 * [JQuery](https://jquery.com/)
 * [MDN](https://developer.mozilla.org/en-US/)
+* [Lighthouse Labs](https://www.lighthouselabs.ca/)
