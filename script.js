@@ -8,9 +8,9 @@ const largestValue = dataObj => {
   return Math.max(...storeArr);
 }
 
+
 // main function that draws the chart
 const drawBarChart = (expenseDataObj, options) => {
-
   $(document).ready(() => {
 
     // updates y-axis values to match given data
@@ -20,7 +20,6 @@ const drawBarChart = (expenseDataObj, options) => {
 
     // updates width of x-axis based on the number of given data values
     $('.bars').css('width', (expenseDataObj.length * 100 + 'px'));
-
 
     // adds the bars html elements using the given data
     for (let j = 0; j < expenseDataObj.length; j++) {
@@ -36,12 +35,9 @@ const drawBarChart = (expenseDataObj, options) => {
     // updates the height of each bar
     $('.bars li .bar').each((i, value) => {
       value.dataset.percentage = 100 * expenseDataObj[i].numData / largestValue(expenseDataObj);
-
       let heightPercent = Math.floor(value.dataset.percentage) + '%';
-
       $(value).css('height', heightPercent);
     });
-
 
     // moves the values on bars (top, mid, bottom)
     $('.bars .bar').on('click', (event) => {
@@ -59,7 +55,6 @@ const drawBarChart = (expenseDataObj, options) => {
     $('.bars .bar').css('background-color', options.barColor);
     $('.bars li').css('color', options.labelColor);
 
-
     // adjusts bar, y-axis & y-axis values heightes to match given height
     let yAxisHeight = options.yAxisHeightValue + 'px';
     $('.bars').css('height', yAxisHeight);
@@ -67,16 +62,11 @@ const drawBarChart = (expenseDataObj, options) => {
     $('.y-axis-values').css('height', yAxisHeight);
     let spaceBtnTicks = options.yAxisHeightValue/2 + 'px';
     $('.y-axis-values li').css('height', spaceBtnTicks);
-
-
   });
-
 }
 
 
 // INPUT CODE
-
-
 $(document).ready(() => {
 
   // clicking on button creates 2 input boxes and a delete button
@@ -99,7 +89,6 @@ $(document).ready(() => {
     $('tbody tr').remove();
   });
 
-
   // dynamically sets the chart title
   $('#title-text').on('keyup', () => {
     let newStr = $('#title-text')[0].value;
@@ -116,13 +105,9 @@ $(document).ready(() => {
     let titleSizeAndUnit = $('#title-size')[0].value + 'px';
     $('#barTitle').css('font-size', titleSizeAndUnit);
   });
-
-
-
 })
 
 // data collection
-
 let dataArr = [];
 let options = {};
 
@@ -149,7 +134,6 @@ const getTableData = () => {
       options.labelColor = $('#cust-labelColor')[0].value;
       options.yAxisHeightValue = $('#cust-yAxisHeightValue')[0].value;
 
-
       // prevents undefined values incase of an empty submission
       if(dataArr.length > 0) {
         drawBarChart(dataArr, options);
@@ -169,10 +153,7 @@ const barChartReset = () => {
   $('.bars li').remove();
 }
 
-
-
-
-
+// main function run
 getTableData();
 
 
