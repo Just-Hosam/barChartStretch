@@ -7,7 +7,7 @@ The user will enter data into the input table in the "Input Chart Data". Rows ca
 
 The title can be dynamically changed by adjsuting the values in the "Dynamic Title Updating" section. The chart can be customized through the input boxes within the "Input Customization Data" section.
 ## Screenshots
-![Website Screenshot](https://imgur.com/a/kCMui56)
+![Website Screenshot](https://i.imgur.com/eOZS7En.png)
 ## Known Issues/Bugs
 * Adding more than 9 bars results in the y-axis ticks breaking off
 * Having too small of a bar will result in the displayed values overlaping other parts of the bar chart
