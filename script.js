@@ -134,6 +134,13 @@ const getTableData = () => {
         dataArr[index].numData = $('table tbody tr input')[counter].value;
         counter += 2;
       })
+
+      options.unit = $('#cust-labelUnit')[0].value;
+      options.barColor = $('#cust-barColor')[0].value;
+      options.labelColor = $('#cust-labelColor')[0].value;
+      options.yAxisHeightValue = $('#cust-yAxisHeightValue')[0].value;
+      options.yAxisHeightUnit = $('#cust-yAxisUnit')[0].value;
+
       if(dataArr.length > 0) {
         drawBarChart(dataArr, options);
       } else {
