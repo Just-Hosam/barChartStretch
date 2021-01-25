@@ -15,13 +15,14 @@
     <div class='intro'>
       <h2 class="intro-title">Introduction</h2>
       <p>This is the Lighthouse Labs Bar Chart Stretch project in the prep module. The goal is to create a Bar Chart that updates its format based on the data entered.</p>
+      <p>Please submit your data to see it represented on the chart. You can click on the bars to move the values shown inside of them.</p>
     </div>
     <div class='chart'>
       <div>
         <h2>Dynamic Title Updating</h2>
         <div>
           <label for="title-text">Title: </label>
-          <input type="text" name="title-text" id="title-text">
+          <input type="text" name="title-text" id="title-text" value="Dynamic Chart Title">
         </div>
         <div>
           <label for="title-color">Title Color: </label>
@@ -35,10 +36,10 @@
         </div>
         <div>
           <label for="title-size">Title Size: </label>
-          <input type="number" name="title-size" id="title-size" value="20">
+          <input type="number" name="title-size" id="title-size" value="25">
         </div>
       </div>
-      <h2>Bar Chart: <span id='barTitle'>Rent as a function of time (months)</span></h2>
+      <h2>Bar Chart: <span id='barTitle' style="font-size: 25px;">Dynamic Chart Title</span></h2>
       <div class='final-bar-chart'>
         <div class="y-axis-values">
           <ul>
@@ -103,10 +104,6 @@
             <div>
               <label for="cust-yAxisHeightValue">Y-axis Height: </label>
               <input type="number" name="cust-yAxisHeightValue" id="cust-yAxisHeightValue" value="300">
-            </div>
-            <div class="height-unit-text">
-              <label for="cust-yAxisUnit">Y-axis Height Unit: </label>
-              <input type="text" value="px" name='cust-yAxisUnit' id="cust-yAxisUnit">
             </div>
             <div>
               <input type="button" value="Submit" class="submissionBtn">

@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -79,11 +79,6 @@ body {
   content: attr(value);
   position: relative;
   bottom: -85%;
-}
-
-#barTitle {
-  font-family: sans-serif;
-  font-size: 20px;
 }
 
 .submissionBtn {
