@@ -17,6 +17,27 @@
       <p>This is the Lighthouse Labs Bar Chart Stretch project in the prep module. The goal is to create a Bar Chart that updates its format based on the data entered.</p>
     </div>
     <div class='chart'>
+      <div>
+        <h2>Dynamic Title Updating</h2>
+        <div>
+          <label for="title-text">Title: </label>
+          <input type="text" name="title-text" id="title-text">
+        </div>
+        <div>
+          <label for="title-color">Title Color: </label>
+          <select name="title-color" id="title-color">
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+          </select>
+        </div>
+        <div>
+          <label for="title-size">Title Size: </label>
+          <input type="number" name="title-size" id="title-size" value="20">
+        </div>
+      </div>
       <h2>Bar Chart: <span id='barTitle'>Rent as a function of time (months)</span></h2>
       <div class='final-bar-chart'>
         <div class="y-axis-values">
@@ -90,11 +111,9 @@
             <div>
               <input type="button" value="Submit" class="submissionBtn">
             </div>
-
-          <h2>Dynamic Title Updating</h2>
-
           </div>
     </div>
+
   </main>
 <script
 src="https://code.jquery.com/jquery-3.5.1.js"
@@ -103,4 +122,7 @@ crossorigin="anonymous">
 </script>
 <script src="./script.js"></script>
 </body>
+<footer>
+  <p id="footer-content">&copy;2021 All right reserved.</p>
+</footer>
 </html>
